@@ -69,15 +69,16 @@ int main (int argc, char* argv[])
   bdd t4 = bdd_and(bddm, u3, u0);
   bdd t5 = bdd_and(bddm, u2, u1);
   bdd t6 = bdd_and(bddm, u3, u1);
+  
   bdd t7 = bdd_or(bddm, t1, t2);
   bdd t8 = bdd_or(bddm, t3, t4);
   bdd t9 = bdd_or(bddm, t5, t6);
   bdd t10 = bdd_or(bddm, t7, t8);
-  bdd T = bdd_or(bddm, t9, t10); 
+  bdd t = bdd_or(bddm, t9, t10); 
   
-  bdd e_final = bdd_or(bddm, T, e_check);
-  bdd c0_final = bdd_or(bddm, T, c0_check);
-  bdd c1_final = bdd_or(bddm, T, c1_check);
+  bdd e_final = bdd_or(bddm, t, e_check);
+  bdd c0_final = bdd_or(bddm, t, c0_check);
+  bdd c1_final = bdd_or(bddm, t, c1_check);
   
   bdd M1 = bdd_and(bddm, e_final, c0_final);
   bdd Y_out = bdd_and(bddm, M1, c1_final);
