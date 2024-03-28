@@ -8,16 +8,16 @@ int main (int argc, char* argv[])
 	bdd_manager bddm = bdd_init();	
 
 	// make 6 variables x0,x1,x2 (in that order)
-	bdd x0 = bdd_new_var_last(bddm);
 	bdd x1 = bdd_new_var_last(bddm);
 	bdd x2 = bdd_new_var_last(bddm);
 	bdd x3 = bdd_new_var_last(bddm);
 	bdd x4 = bdd_new_var_last(bddm);
 	bdd x5 = bdd_new_var_last(bddm);
+	bdd x6 = bdd_new_var_last(bddm);
 
-	bdd a  = bdd_and (bddm,x0,x1);
-	bdd b  = bdd_and (bddm,x2,x3);
-	bdd c  = bdd_and (bddm,x4,x5);
+	bdd a  = bdd_and (bddm,x1,x2);
+	bdd b  = bdd_and (bddm,x3,x4);
+	bdd c  = bdd_and (bddm,x5,x6);
 
 	bdd d  = bdd_not (bddm,a);
 	bdd e  = bdd_not (bddm,b);
