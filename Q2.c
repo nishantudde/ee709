@@ -109,7 +109,7 @@ int main (int argc, char* argv[])
     printf("c1_spec is not equal to c1_imp\n");
   }
   
-  if(result == bdd_one(bddm))
+  if(Y_out == bdd_one(bddm))
   {
     printf("---DONE---\n");
     bdd_print_bdd(bddm,Y_out,NULL, NULL,NULL, stdout);
