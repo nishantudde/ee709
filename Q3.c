@@ -56,11 +56,11 @@ int main (int argc, char* argv[])
 	//checking of y1 and y2 are same or not?
 	if (y1 == y2)
 	{
-		printf("Both the machines are same\n");
+		printf("Both machines are same\n");
 	}	
 	else
 	{
-		printf("Both the machines are not same\n");
+		printf("Both machines are not same\n");
 	}
 	return (0);
 	}
