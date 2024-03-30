@@ -99,7 +99,7 @@ int main (int argc, char* argv[])
   }
   else
   {
-    printf("c0_imp is not equal to c0_specp\n");
+    printf("c0_imp is not equal to c0_spec\n");
   }
   
     if(c1 == bdd_one(bddm))
