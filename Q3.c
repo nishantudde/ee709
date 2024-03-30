@@ -57,11 +57,11 @@ int main (int argc, char* argv[])
 	//y1 and y2 are same or not 
 	if (y1 == y2)
 	{
-		printf("Both machines are SAME\n");
+		printf("Both machines are EQUAL\n");
 	}	
 	else
 	{
-		printf("Both machines are NOT SAME\n");
+		printf("Both machines are NOT EQUAL\n");
 	}
 	return (0);
 	}
