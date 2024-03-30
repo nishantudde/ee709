@@ -62,20 +62,21 @@ int main (int argc, char* argv[])
 
  printf("----------------c0_check-----------------\n");
  bdd_print_bdd(bddm,c0_check,NULL, NULL,NULL, stdout);
-  
+
+ // don't care
   bdd t1 = bdd_and(bddm, u3, u2);
   bdd t2 = bdd_and(bddm, u1, u0);
   bdd t3 = bdd_and(bddm, u2, u0);
   bdd t4 = bdd_and(bddm, u3, u0);
   bdd t5 = bdd_and(bddm, u2, u1);
   bdd t6 = bdd_and(bddm, u3, u1);
-  
   bdd t7 = bdd_or(bddm, t1, t2);
   bdd t8 = bdd_or(bddm, t3, t4);
   bdd t9 = bdd_or(bddm, t5, t6);
   bdd t10 = bdd_or(bddm, t7, t8);
   bdd t = bdd_or(bddm, t9, t10); 
-  
+
+  // e, c0, c1
   bdd e = bdd_or(bddm, t, e_check);
   bdd c0 = bdd_or(bddm, t, c0_check);
   bdd c1 = bdd_or(bddm, t, c1_check);
