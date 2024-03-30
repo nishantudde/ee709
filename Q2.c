@@ -76,38 +76,38 @@ int main (int argc, char* argv[])
   bdd t10 = bdd_or(bddm, t7, t8);
   bdd t = bdd_or(bddm, t9, t10); 
   
-  bdd e_final = bdd_or(bddm, t, e_check);
-  bdd c0_final = bdd_or(bddm, t, c0_check);
-  bdd c1_final = bdd_or(bddm, t, c1_check);
+  bdd e = bdd_or(bddm, t, e_check);
+  bdd c0 = bdd_or(bddm, t, c0_check);
+  bdd c1 = bdd_or(bddm, t, c1_check);
   
-  bdd M1 = bdd_and(bddm, e_final, c0_final);
-  bdd Y_out = bdd_and(bddm, M1, c1_final);
+  bdd M1 = bdd_and(bddm, e, c0);
+  bdd Y_out = bdd_and(bddm, M1, c1);
   
-  if(e_final == bdd_one(bddm))
+  if(e == bdd_one(bddm))
   {
-    printf("e_spec is equal to e_imp\n");
+    printf("e_imp is equal to e_spec\n");
   }
   else
   {
-    printf("e_spec is not equal to e_imp\n");
+    printf("e_imp is not equal to e_spec\n");
   }
   
-    if(c0_final == bdd_one(bddm))
+    if(c0 == bdd_one(bddm))
   {
-    printf("c0_spec is equal to c0_imp\n");
+    printf("c0_imp is equal to c0_spec\n");
   }
   else
   {
-    printf("c0_spec is not equal to c0_imp\n");
+    printf("c0_imp is not equal to c0_specp\n");
   }
   
-    if(c1_final == bdd_one(bddm))
+    if(c1 == bdd_one(bddm))
   {
-    printf("c1_spec is equal to c1_imp\n");
+    printf("c1_imp is equal to c1_spec\n");
   }
   else
   {
-    printf("c1_spec is not equal to c1_imp\n");
+    printf("c1_imp is not equal to c1_spec\n");
   }
   
   if(Y_out == bdd_one(bddm))
