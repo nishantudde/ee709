@@ -16,21 +16,21 @@ int main (int argc, char* argv[])
 	bdd x = bdd_new_var_last(bddm);
 	bdd r = bdd_new_var_last(bddm);
 
-   //  NOT of these which we required
+       //  NOT of these which we required
         bdd s3_not = bdd_not (bddm, s3);
 	bdd s2_not = bdd_not (bddm, s2);
 	bdd s1_not = bdd_not (bddm, s1);
 	bdd r_not = bdd_not (bddm, r);
 	bdd x_not = bdd_not (bddm, x);
 	
-   // compute output y1 for sequential circuit1
+       // output y1 for sequential circuit 1
 	bdd a1  = bdd_and (bddm, r_not, x);
 	bdd a2  = bdd_and (bddm, a1, s3);	
         bdd a3  = bdd_and (bddm, r_not, x_not);
         bdd a4  = bdd_and (bddm, a3, s1);
         bdd y_seq_1  = bdd_or (bddm, a2, a4);
   
-  // compute output y2 for sequential circuit1
+       // output y2 for sequential circuit 1
 	bdd b5  = bdd_and (bddm, r_not, x);
 	bdd b6 = bdd_xnor (bddm, t0, t1);
 	bdd b7  = bdd_and (bddm, b5, b6);	
@@ -39,10 +39,10 @@ int main (int argc, char* argv[])
         bdd b10  = bdd_and (bddm, b8, b9);	
         bdd y_seq_2  = bdd_or (bddm, b7, b10);
   
-	// compute state1
-	bdd st1 = bdd_and (bddm, s3_not, s2_not);
-	bdd st2 = bdd_and (bddm, s1_not, s0);
-        bdd state1 = bdd_and (bddm, st1, st2);
+	// state1
+	bdd st_1 = bdd_and (bddm, s3_not, s2_not);
+	bdd st_2 = bdd_and (bddm, s1_not, s0);
+        bdd state1 = bdd_and (bddm, st_1, st_2);
 	
 	bdd y1 = bdd_and (bddm, y_seq_1, state1);
 	bdd y2 = bdd_and (bddm, y_seq_2, state1);
@@ -53,14 +53,14 @@ int main (int argc, char* argv[])
          bdd z = bdd_xor(bddm, y1, y2);
          bdd_print_bdd(bddm,z,NULL, NULL,NULL, stdout);
 
-	//checking of y1 and y2 are same or not?
+	//y1 and y2 are same or not?
 	if (y1 == y2)
 	{
-		printf("Both machines are same\n");
+		printf("Both machines are SAME\n");
 	}	
 	else
 	{
-		printf("Both machines are not same\n");
+		printf("Both machines are NOT SAME\n");
 	}
 	return (0);
 	}
