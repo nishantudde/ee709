@@ -57,11 +57,11 @@ int main (int argc, char* argv[])
  printf("----------------e_check-----------------\n"); 
  bdd_print_bdd(bddm,e_check,NULL, NULL,NULL, stdout);
 
- printf("----------------c1_check----------------\n");
- bdd_print_bdd(bddm,c1_check,NULL, NULL,NULL, stdout);
-
  printf("----------------c0_check-----------------\n");
  bdd_print_bdd(bddm,c0_check,NULL, NULL,NULL, stdout);
+
+ printf("----------------c1_check----------------\n");
+ bdd_print_bdd(bddm,c1_check,NULL, NULL,NULL, stdout);
 
  // don't care
   bdd t1 = bdd_and(bddm, u3, u2);
