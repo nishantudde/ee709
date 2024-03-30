@@ -23,37 +23,38 @@ int main (int argc, char* argv[])
 	bdd r_not = bdd_not (bddm, r);
 	bdd x_not = bdd_not (bddm, x);
 	
-       // output y1 for sequential circuit 1
+       // for sequential circuit 1
 	bdd a1  = bdd_and (bddm, r_not, x);
 	bdd a2  = bdd_and (bddm, a1, s3);	
         bdd a3  = bdd_and (bddm, r_not, x_not);
         bdd a4  = bdd_and (bddm, a3, s1);
         bdd y_seq_1  = bdd_or (bddm, a2, a4);
   
-       // output y2 for sequential circuit 1
-	bdd b5  = bdd_and (bddm, r_not, x);
-	bdd b6 = bdd_xnor (bddm, t0, t1);
-	bdd b7  = bdd_and (bddm, b5, b6);	
-        bdd b8  = bdd_and (bddm, r_not, x_not);
-	bdd b9 = bdd_xor (bddm, t0, t1);
-        bdd b10  = bdd_and (bddm, b8, b9);	
-        bdd y_seq_2  = bdd_or (bddm, b7, b10);
+       // for sequential circuit 2
+	bdd b1  = bdd_and (bddm, r_not, x);
+	bdd b2 = bdd_xnor (bddm, t0, t1);
+	bdd b3  = bdd_and (bddm, b1, b2);	
+        bdd b4  = bdd_and (bddm, r_not, x_not);
+	bdd b5 = bdd_xor (bddm, t0, t1);
+        bdd b6  = bdd_and (bddm, b4, b5);	
+        bdd y_seq_2  = bdd_or (bddm, b3, b6);
   
-	// state1
+	// state
 	bdd st_1 = bdd_and (bddm, s3_not, s2_not);
 	bdd st_2 = bdd_and (bddm, s1_not, s0);
         bdd state1 = bdd_and (bddm, st_1, st_2);
-	
+
+	// output of both machines with state
 	bdd y1 = bdd_and (bddm, y_seq_1, state1);
 	bdd y2 = bdd_and (bddm, y_seq_2, state1);
 
 	printf("----------------------------------------------------\n");
 
 	// print 
-         bdd z = bdd_xor(bddm, y1, y2);
+         bdd z = bdd_xor(bddm, y1, y2);   // final output
          bdd_print_bdd(bddm,z,NULL, NULL,NULL, stdout);
 
-	//y1 and y2 are same or not?
+	//y1 and y2 are same or not 
 	if (y1 == y2)
 	{
 		printf("Both machines are SAME\n");
