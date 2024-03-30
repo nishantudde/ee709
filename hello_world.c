@@ -7,7 +7,7 @@ int main (int argc, char* argv[])
 	// Create the universe..
 	bdd_manager bddm = bdd_init();	
 
-	// make 6 variables x0,x1,x2 (in that order)
+	// 6 variables x0,x1,x2 (in that order)
 	bdd x1 = bdd_new_var_last(bddm);
 	bdd x2 = bdd_new_var_last(bddm);
 	bdd x3 = bdd_new_var_last(bddm);
