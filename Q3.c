@@ -53,7 +53,9 @@ int main (int argc, char* argv[])
 	// print 
          bdd z = bdd_xor(bddm, y1, y2);   // final output
          bdd_print_bdd(bddm,z,NULL, NULL,NULL, stdout);
-
+        
+	printf("---------------------\n");
+	
 	//y1 and y2 are same or not 
 	if (y1 == y2)
 	{
