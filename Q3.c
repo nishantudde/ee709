@@ -59,11 +59,11 @@ int main (int argc, char* argv[])
 	//y1 and y2 are same or not 
 	if (y1 == y2)
 	{
-		printf("BDD of both machines are EQUAL\n");
+		printf("BDD of both sequintial circuits are SAME\n");
 	}	
 	else
 	{
-		printf("BDD of both machines are NOT EQUAL\n");
+		printf("BDD of both sequintial circuits are NOT SAME\n");
 	}
 	return (0);
 	}
