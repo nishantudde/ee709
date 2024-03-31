@@ -83,7 +83,9 @@ int main (int argc, char* argv[])
   
   bdd M1 = bdd_and(bddm, e, c0);
   bdd Y_out = bdd_and(bddm, M1, c1);
-  
+
+  printf("-------------------------------------\n");
+	
   if(e == bdd_one(bddm))
   {
     printf("e_imp is equal to e_spec\n");
@@ -111,7 +113,7 @@ int main (int argc, char* argv[])
     printf("c1_imp is not equal to c1_spec\n");
   }
 
-  printf("--------------------------------------\n");
+  printf("-------------------------------------\n");
 	
   if(Y_out == bdd_one(bddm))
   {
