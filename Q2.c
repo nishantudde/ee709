@@ -113,12 +113,12 @@ int main (int argc, char* argv[])
   
   if(Y_out == bdd_one(bddm))
   {
-    printf("---DONE---\n");
+    printf("Success\n"); //if implimantaion and specification are equal
     bdd_print_bdd(bddm,Y_out,NULL, NULL,NULL, stdout);
   }
   else 
   {
-    printf("---NOT DONE---\n");
+    printf("Failure\n");
   }
 	
 return (0);
