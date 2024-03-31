@@ -27,7 +27,7 @@ int main (int argc, char* argv[])
 	bdd y  = bdd_and (bddm,g,f);
 
 	
-	printf("----------------------------------------------------\n");
+	printf("-----------------------------------------------------\n");
 
 	// print y
 	bdd_print_bdd(bddm,y,NULL, NULL,NULL, stdout);
