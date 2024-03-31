@@ -110,7 +110,9 @@ int main (int argc, char* argv[])
   {
     printf("c1_imp is not equal to c1_spec\n");
   }
-  
+
+  printf("--------------------------------------\n");
+	
   if(Y_out == bdd_one(bddm))
   {
     printf("Success\n"); //if implimantaion and specification are equal
