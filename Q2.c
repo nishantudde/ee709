@@ -54,13 +54,13 @@ int main (int argc, char* argv[])
         bdd c1_check =  bdd_xnor(bddm, c1_spec, c1_imp);
 
  // starting of check 
- printf("----------------e_check-----------------\n"); 
+ printf("----------------check for e-----------------\n"); 
  bdd_print_bdd(bddm,e_check,NULL, NULL,NULL, stdout);
 
- printf("----------------c0_check-----------------\n");
+ printf("----------------check for c0-----------------\n");
  bdd_print_bdd(bddm,c0_check,NULL, NULL,NULL, stdout);
 
- printf("----------------c1_check----------------\n");
+ printf("----------------check for c1----------------\n");
  bdd_print_bdd(bddm,c1_check,NULL, NULL,NULL, stdout);
 
  // don't care
